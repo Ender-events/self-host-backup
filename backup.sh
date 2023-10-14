@@ -1,10 +1,12 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
 echo "do a backup"
 start_time=$(date +%s%3N)
 
+set +e
 restic snapshots
 have_repo=$?
+set -e
 
 if [ $have_repo -ne 0 ]; then
     restic init
