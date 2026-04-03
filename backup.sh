@@ -17,6 +17,7 @@ pg_dump > /tmp/nextcloud_pgsql.bak
 
 restic backup /mnt/nextcloud/
 restic backup /tmp/nextcloud_pgsql.bak
+restic backup /mnt/config/
 
 restic forget --keep-daily 7 --keep-weekly 4
 
